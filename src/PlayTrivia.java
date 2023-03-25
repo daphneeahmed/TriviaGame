@@ -13,7 +13,7 @@ public class PlayTrivia {
         questionBank.getQuestions();
         allAnswers = new AnswerBank(questionBank.getArray().size());
         allAnswers.setArray();
-        Answer.getCorrAnswer();      //correct answer is static
+        //Answer.getCorrAnswer();      //correct answer is static
 
         int qSize = questionBank.getArray().size();
 
