@@ -31,10 +31,16 @@ public class Answer {
 
     public ArrayList<String> separateByRegex() {
         for (int i = 0; i < unfilteredAnswer.size(); i++) {
-                commaSeparated = unfilteredAnswer.get(i);
-                //elements = Stream.of(commaSeparated.split(",")).map(String::trim).toList();
-                elements = new ArrayList<>(Arrays.asList(commaSeparated.split(" - ")));
-                filteredAnswer.addAll(elements);
+            commaSeparated = unfilteredAnswer.get(i);
+            String[] elements = commaSeparated.split(" - ");
+            //elements = Stream.of(commaSeparated.split(",")).map(String::trim).toList();
+            //elements = new ArrayList<>(Arrays.asList(commaSeparated.split(" - ")));
+            filteredAnswer.addAll(Arrays.asList(elements));
+
+        }
+
+        for (int i = 0; i < filteredAnswer.size(); i++){
+            System.out.println(filteredAnswer.get(i));
         }
         return filteredAnswer;
     }
@@ -52,12 +58,12 @@ public class Answer {
         }
     }
 
-//    public static void main(String[] args) {
-//        Answer ans = new Answer();
-//        ans.getAnswers();
-//        ArrayList<String> test = new ArrayList<>();
-//        test = ans.separateByRegex();
-//    }
+    public static void main(String[] args) {
+        Answer ans = new Answer();
+        ans.getAnswers();
+        ArrayList<String> test = new ArrayList<>();
+        test = ans.separateByRegex();
+    }
 }
 
 
